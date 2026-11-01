@@ -1609,6 +1609,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 (function () {
   'use strict';
 
@@ -1633,7 +1635,7 @@ a { color: inherit; text-decoration: none; }
   const segVis        = document.getElementById('seg-vis');
   const historyList   = document.getElementById('history-list');
   const btnClearHist  = document.getElementById('btn-clear-history');
-  const emptyState    = document.getElementById('empty-state');
+  const emptyState    = __liveOrKept('empty-state');
   const loadingState  = document.getElementById('loading-state');
   const resultsState  = document.getElementById('results-state');
   const errorState    = document.getElementById('error-state');

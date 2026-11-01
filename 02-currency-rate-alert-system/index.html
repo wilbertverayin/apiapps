@@ -1087,6 +1087,8 @@ select.input-sm {
 
 <!-- N12 scroll retract -->
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 (function () {
   var nav = document.getElementById('site-nav');
   var scrollEl = document.querySelector('.panel-right');
@@ -1108,7 +1110,7 @@ select.input-sm {
 'use strict';
 
 // ── Constants ────────────────────────────────────────────────────
-const API_BASE = 'https://api.frankfurter.app';
+const API_BASE = 'https://api.frankfurter.dev/v1';
 const MAX_ALERTS = 5;
 
 const MAJOR_CURRENCIES = ['EUR','GBP','JPY','CHF','CAD','AUD','CNY','HKD','SGD','KRW','SEK','NOK','INR','MXN','BRL'];
@@ -1671,7 +1673,7 @@ document.getElementById('btn-save-alert').addEventListener('click', () => {
 // ── Render Alerts ────────────────────────────────────────────────
 function renderAlerts() {
   const list = document.getElementById('alerts-list');
-  const empty = document.getElementById('alerts-empty');
+  const empty = __liveOrKept('alerts-empty');
   const badge = document.getElementById('alert-count-badge');
 
   badge.textContent = state.alerts.length ? `(${state.alerts.length}/${MAX_ALERTS})` : '';

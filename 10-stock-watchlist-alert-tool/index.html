@@ -1001,6 +1001,8 @@ button { cursor: pointer; font-family: var(--font-body); }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // ── Hallmark · macrostructure: Workbench · theme: Garden · nav: N9 ──────────
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -1244,7 +1246,7 @@ function buildSparkline(prices30, positive) {
 // ── Render watchlist cards ───────────────────────────────────────────────────
 function renderWatchlist() {
   const grid = document.getElementById('watchlist-grid');
-  const empty = document.getElementById('watchlist-empty');
+  const empty = __liveOrKept('watchlist-empty');
   if (!watchlist.length) {
     grid.innerHTML = '';
     grid.style.display = 'none';
@@ -1490,7 +1492,7 @@ function renderAlertsPanel() {
 
   // Triggered log
   const logEl = document.getElementById('triggered-log');
-  const emptyEl = document.getElementById('triggered-empty');
+  const emptyEl = __liveOrKept('triggered-empty');
   logEl.innerHTML = '';
   const unread = triggeredLog.filter(l => !l.read);
   if (!triggeredLog.length) {

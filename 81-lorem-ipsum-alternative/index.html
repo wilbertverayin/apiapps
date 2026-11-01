@@ -994,6 +994,8 @@ input[type="range"] {
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 /* ── Mulberry32 PRNG ──────────────────────────────────────────────────────── */
@@ -1861,7 +1863,7 @@ function renderPreview(raw, type, domain, includeHtml) {
 
 function showOutput(raw) {
   const textArea = document.getElementById('output-raw');
-  const emptyRaw = document.getElementById('empty-raw');
+  const emptyRaw = __liveOrKept('empty-raw');
 
   const isMono = state.type === 'json' || state.type === 'sql' || state.includeHtml;
   textArea.className = 'output-raw' + (isMono ? ' mono-mode' : '');
@@ -1883,7 +1885,7 @@ function showOutput(raw) {
 /* ── History rendering ─────────────────────────────────────────────────── */
 function renderHistory() {
   const h = historyGet();
-  const emptyEl = document.getElementById('history-empty');
+  const emptyEl = __liveOrKept('history-empty');
   const container = document.getElementById('history-entries');
   container.innerHTML = '';
 

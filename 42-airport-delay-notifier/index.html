@@ -1542,6 +1542,8 @@ a { color: inherit; text-decoration: none; }
 
 <!-- N12 scroll retract -->
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 (function() {
   var nav = document.getElementById('site-nav');
   function retract(scrollTop) {
@@ -2121,7 +2123,7 @@ function renderImpact() {
 
 // Historical delay log
 function renderLog() {
-  const empty = document.getElementById('log-empty');
+  const empty = __liveOrKept('log-empty');
   const table = document.getElementById('log-table');
   const tbody = document.getElementById('log-body');
 

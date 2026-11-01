@@ -740,6 +740,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 // ── State ────────────────────────────────────────────────────
@@ -1222,7 +1224,7 @@ function renderShareTab(r) {
 function renderHistory() {
   const entries = scanHistory.get();
   const container = document.getElementById('history-list');
-  const emptyEl = document.getElementById('history-empty');
+  const emptyEl = __liveOrKept('history-empty');
 
   // Remove old items (keep empty placeholder)
   container.querySelectorAll('.history-item').forEach(el => el.remove());

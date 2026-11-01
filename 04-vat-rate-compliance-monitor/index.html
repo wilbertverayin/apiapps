@@ -1266,7 +1266,7 @@ let expandedCode = null;
 // Helpers
 // ─────────────────────────────────────────────────────────────
 const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const fmt€ = n => '€' + Number(n).toFixed(2);
+const fmtEur = n => '€' + Number(n).toFixed(2);
 const fmtPct = n => Number(n).toFixed(n % 1 ? 1 : 0) + '%';
 
 function rateColorClass(rate) {
@@ -1571,10 +1571,10 @@ function runCalc() {
   const vatAmount = price * applicableRate;
   const grossPrice = price + vatAmount;
 
-  document.getElementById('resNet').textContent   = fmt€(price);
+  document.getElementById('resNet').textContent   = fmtEur(price);
   document.getElementById('resRate').textContent  = fmtPct(applicableRate * 100);
-  document.getElementById('resVat').textContent   = fmt€(vatAmount);
-  document.getElementById('resGross').textContent = fmt€(grossPrice);
+  document.getElementById('resVat').textContent   = fmtEur(vatAmount);
+  document.getElementById('resGross').textContent = fmtEur(grossPrice);
   document.getElementById('calcOssNote').textContent = ossNote;
 
   const result = document.getElementById('calcResult');

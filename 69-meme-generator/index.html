@@ -1134,6 +1134,8 @@ select.input-sm { cursor: pointer; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 /* ─── Constants ────────────────────────────────────────────── */
@@ -1174,7 +1176,7 @@ const state = {
 /* ─── DOM refs ───────────────────────────────────────────────── */
 const canvas      = document.getElementById('meme-canvas');
 const ctx         = canvas.getContext('2d');
-const emptyState  = document.getElementById('canvas-empty');
+const emptyState  = __liveOrKept('canvas-empty');
 const textBoxes   = document.getElementById('text-boxes');
 const tGrid       = document.getElementById('template-grid');
 const searchInput = document.getElementById('template-search');

@@ -1037,6 +1037,8 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 <!-- N12 retract behaviour -->
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 (function () {
   var nav = document.getElementById('nav');
   window.addEventListener('scroll', function () {
@@ -1288,7 +1290,7 @@ function renderCalendar() {
   const el = document.getElementById('calendar-count');
   el.innerHTML = `<strong>${upcoming.length}</strong> upcoming date${upcoming.length !== 1 ? 's' : ''}`;
 
-  const empty = document.getElementById('calendar-empty');
+  const empty = __liveOrKept('calendar-empty');
   const months = document.getElementById('calendar-months');
 
   if (!filtered.length) {
@@ -1622,7 +1624,7 @@ function logHistory(artistId, artistName, eventCount) {
 }
 
 function renderHistory() {
-  const empty = document.getElementById('history-empty');
+  const empty = __liveOrKept('history-empty');
   const entries = document.getElementById('history-entries');
   const countEl = document.getElementById('history-count');
   countEl.innerHTML = `<strong>${historyLog.length}</strong> log entr${historyLog.length !== 1 ? 'ies' : 'y'}`;

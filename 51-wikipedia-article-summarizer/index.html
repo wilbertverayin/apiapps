@@ -1216,6 +1216,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 // ── Constants ─────────────────────────────────────────────────
@@ -1264,7 +1266,7 @@ const btnSearch    = document.getElementById('btnSearch');
 const acDropdown   = document.getElementById('acDropdown');
 const historyList  = document.getElementById('historyList');
 const btnClearHist = document.getElementById('btnClearHistory');
-const emptyState   = document.getElementById('emptyState');
+const emptyState   = __liveOrKept('emptyState');
 const contentArea  = document.getElementById('contentArea');
 
 // ── Toast ─────────────────────────────────────────────────────

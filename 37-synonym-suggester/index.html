@@ -1355,6 +1355,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // N12 retract
 (function () {
   const nav = document.getElementById('nav');
@@ -1410,7 +1412,7 @@ const countFilt      = document.getElementById('count-filter');
 const contextToggle  = document.getElementById('context-toggle');
 const recentEl       = document.getElementById('recent-searches');
 const collectionEl   = document.getElementById('word-collection');
-const resultsEmpty   = document.getElementById('results-empty');
+const resultsEmpty   = __liveOrKept('results-empty');
 const resultsContent = document.getElementById('results-content');
 const defPanel       = document.getElementById('def-panel');
 const resultsGroups  = document.getElementById('results-groups');

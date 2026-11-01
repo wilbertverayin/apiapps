@@ -1137,7 +1137,7 @@ a { color: inherit; text-decoration: none; }
       ↓ Export CSV
     </button>
     <span class="status-msg" id="status-msg" aria-live="polite"></span>
-    <span class="footer-api-credit">Geo data via ip-api.com · PPP indices from World Bank GNI ~2023</span>
+    <span class="footer-api-credit">Geo data via ipwho.is · PPP indices from World Bank GNI ~2023</span>
   </div>
 
 </main>
@@ -1146,6 +1146,9 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+// ip-api.com free tier is HTTP-only (403 over HTTPS); ipwho.is is free over HTTPS. Normalise to the ip-api shape.
+function geoFetch(ip){return fetch('https://ipwho.is/'+(ip||'')).then(function(r){return r.json().then(function(d){return new Response(JSON.stringify({status:d.success?'success':'fail',country:d.country,countryCode:d.country_code,regionName:d.region,city:d.city,query:d.ip}),{status:r.status,headers:{'Content-Type':'application/json'}})})})}
+
 // ── PPP Data (World Bank GNI per capita PPP, ~2023, US=100) ──────────────────
 // Source is hardcoded as fallback; override by serving ./ppp-data.json from your backend.
 const PPP_FALLBACK = [
@@ -1545,7 +1548,7 @@ function buildVanillaCode() {
   var BASE_PRICE = ${basePrice};
   var PPP_PRICES = ${JSON.stringify(map, null, 2)};
 
-  fetch('https://ip-api.com/json/?fields=countryCode,status')
+  geoFetch()
     .then(function(r) {
       if (!r.ok) throw new Error('Network error: ' + r.status);
       return r.json();
@@ -1588,7 +1591,7 @@ export function useGeoPrice() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('https://ip-api.com/json/?fields=countryCode,status')
+    geoFetch()
       .then(r => {
         if (!r.ok) throw new Error('Network error: ' + r.status);
         return r.json();
@@ -1706,17 +1709,14 @@ async function lookupIP(ip) {
     return;
   }
 
-  // ip-api.com requires HTTPS for production pages (mixed-content policy)
-  const url = ip
-    ? `https://ip-api.com/json/${ip}?fields=status,country,countryCode,regionName,city,query`
-    : `https://ip-api.com/json/?fields=status,country,countryCode,regionName,city,query`;
+
 
   setStatus('Detecting location…', 'loading');
   document.getElementById('btn-my-location').disabled = true;
   document.getElementById('btn-lookup-ip').disabled = true;
 
   try {
-    const res = await fetch(url);
+    const res = await geoFetch(ip);
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 

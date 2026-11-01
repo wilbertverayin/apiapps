@@ -1295,7 +1295,7 @@ select.input-sm {
     <h2 class="modal-title" id="qr-modal-title">Guest View QR Code</h2>
     <p class="modal-sub">Guests scan this code to browse your tap list and food pairings on their phone.</p>
     <div class="qr-wrap">
-      <img id="qr-img" src="" alt="QR code linking to guest view" width="184" height="184">
+      <img id="qr-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="QR code linking to guest view" width="184" height="184">
     </div>
     <p class="qr-url-text" id="qr-url-text"></p>
     <div class="modal-actions">
@@ -1309,6 +1309,8 @@ select.input-sm {
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // ─────────────────────────────────────────────────────────────
 // BEER DATABASE — ~40 styles, flavors, food pairings, body
 // ─────────────────────────────────────────────────────────────
@@ -1895,7 +1897,7 @@ function renderTapList() {
 
 // ── Render: Results panel (food-first mode) ───────────────
 function renderFoodResults() {
-  const empty = document.getElementById('results-empty');
+  const empty = __liveOrKept('results-empty');
   const content = document.getElementById('results-content');
   const grid = document.getElementById('pairing-grid');
   const title = document.getElementById('results-title');
@@ -1961,7 +1963,7 @@ function renderFoodResults() {
 
 // ── Render: Results panel (beer-first mode) ───────────────
 function renderBeerResults() {
-  const empty = document.getElementById('results-empty');
+  const empty = __liveOrKept('results-empty');
   const content = document.getElementById('results-content');
   const grid = document.getElementById('pairing-grid');
   const title = document.getElementById('results-title');
@@ -2648,7 +2650,7 @@ document.getElementById('guest-food-search').addEventListener('input', e => {
   }
 
   // Watch results-empty visibility change (attribute observer)
-  const emptyEl = document.getElementById('results-empty');
+  const emptyEl = __liveOrKept('results-empty');
   if (emptyEl) {
     new MutationObserver(updateHeroStat).observe(emptyEl, { attributes: true, attributeFilter: ['style'] });
   }

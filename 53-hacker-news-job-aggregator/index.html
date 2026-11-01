@@ -1415,7 +1415,7 @@ async function findLatestWhoIsHiringThread() {
 
 async function fetchThreadComments(threadId, page = 0) {
   const data = await fetchJson(
-    `${ALGOLIA_BASE}/search?tags=comment,story_${threadId}&hitsPerPage=${PAGE_SIZE}&page=${page}&restrictSearchableAttributes=text`
+    `${ALGOLIA_BASE}/search?tags=comment,story_${threadId}&hitsPerPage=${PAGE_SIZE}&page=${page}`
   );
   return data;
 }

@@ -1084,8 +1084,8 @@ a { color: inherit; text-decoration: none; }
         <span class="section-heading">Embeddable Widget</span>
         <p class="embed-desc">Paste this snippet on any website to show a rotating daily quote automatically.</p>
         <div class="embed-code-wrap">
-          <pre class="embed-code" id="embed-code"><div id="quoteflow-widget"></div>
-<script>(function(){fetch('https://dummyjson.com/quotes/random').then(r=&gt;r.json()).then(d=&gt;{document.getElementById('quoteflow-widget').innerHTML='&lt;blockquote style="font-family:serif;font-size:1.1rem;border-left:3px solid #888;padding:8px 16px;margin:0"&gt;&lt;p&gt;'+d.quote+'&lt;/p&gt;&lt;footer style="font-size:.85rem;color:#888;margin-top:6px"&gt;&amp;mdash; '+d.author+'&lt;/footer&gt;&lt;/blockquote&gt;'})})();&lt;/script&gt;</pre>
+          <pre class="embed-code" id="embed-code">&lt;div id="quoteflow-widget"&gt;&lt;/div&gt;
+&lt;script&gt;(function(){fetch('https://dummyjson.com/quotes/random').then(r=&gt;r.json()).then(d=&gt;{document.getElementById('quoteflow-widget').innerHTML='&lt;blockquote style="font-family:serif;font-size:1.1rem;border-left:3px solid #888;padding:8px 16px;margin:0"&gt;&lt;p&gt;'+d.quote+'&lt;/p&gt;&lt;footer style="font-size:.85rem;color:#888;margin-top:6px"&gt;&amp;mdash; '+d.author+'&lt;/footer&gt;&lt;/blockquote&gt;'})})();&lt;/script&gt;</pre>
           <button class="btn-action ghost" id="btn-copy-embed" aria-label="Copy embed code">Copy snippet</button>
         </div>
       </div>
@@ -1119,6 +1119,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 /* ── Constants ───────────────────────────────────────────── */
@@ -1153,10 +1155,10 @@ const btnSaveQ     = document.getElementById('btn-save-quote');
 const btnCopy      = document.getElementById('btn-copy-text');
 const btnDownload  = document.getElementById('btn-download');
 const listEl       = document.getElementById('quote-list');
-const listEmpty    = document.getElementById('list-empty');
+const listEmpty    = __liveOrKept('list-empty');
 const savedList    = document.getElementById('saved-list');
 const savedCount   = document.getElementById('saved-count');
-const savedEmpty   = document.getElementById('saved-empty');
+const savedEmpty   = __liveOrKept('saved-empty');
 const filterKw     = document.getElementById('filter-keyword');
 const filterAuth   = document.getElementById('filter-author');
 const cardPreview  = document.getElementById('card-preview');
@@ -1517,7 +1519,7 @@ try { subscribers = JSON.parse(localStorage.getItem(LS_SUBS) || '[]'); } catch {
 const subEmailEl  = document.getElementById('sub-email');
 const btnSubAdd   = document.getElementById('btn-sub-add');
 const subListEl   = document.getElementById('sub-list');
-const subEmptyEl  = document.getElementById('sub-empty');
+const subEmptyEl  = __liveOrKept('sub-empty');
 const subCountEl  = document.getElementById('sub-count');
 const btnSubExport = document.getElementById('btn-sub-export');
 

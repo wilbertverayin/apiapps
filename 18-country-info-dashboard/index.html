@@ -13,7 +13,7 @@
   /* Hallmark · macrostructure: Long Document · nav: N13 */
 
   :root {
-    --shadow-dropdown: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-dropdown: 0 8px 24px var(--color-shadow);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,6 +64,7 @@
   }
   .nav-wordmark span { color: var(--color-accent); }
   .nav-wordmark:hover { opacity: 0.8; }
+  .nav-wordmark:active { opacity: 0.6; }
   .nav-wordmark:focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 2px;
@@ -96,6 +97,7 @@
     transition: color 0.15s;
   }
   .nav-back:hover { color: var(--color-ink); }
+  .nav-back:active { color: var(--color-accent); }
   .nav-back:focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 2px;
@@ -255,6 +257,7 @@
     background: var(--color-accent-subtle);
     color: var(--color-accent);
   }
+  .ac-option:active { opacity: 0.75; }
   .ac-option:focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: -2px;
@@ -289,6 +292,7 @@
     transition: background 0.12s, border-color 0.12s;
   }
   .recent-item:hover { background: var(--color-accent-subtle); }
+  .recent-item:active { background: var(--color-accent-subtle); opacity: 0.75; }
   .recent-item.active {
     background: var(--color-accent-subtle);
     border-left-color: var(--color-accent);
@@ -617,6 +621,7 @@
     transition: opacity 0.15s;
   }
   .maps-link:hover { opacity: 0.7; }
+  .maps-link:active { opacity: 0.5; }
   .maps-link:focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 2px;

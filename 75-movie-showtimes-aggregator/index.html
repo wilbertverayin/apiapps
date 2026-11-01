@@ -1472,6 +1472,8 @@ select.input-sm { cursor: pointer; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 // ── Utilities ──────────────────────────────────────────────────
@@ -2078,7 +2080,7 @@ function renderWeeklyGrid() {
 // ── Movie Database ─────────────────────────────────────────────
 function renderMovieDatabase() {
   const grid = document.getElementById('movie-db-grid');
-  const empty = document.getElementById('db-empty');
+  const empty = __liveOrKept('db-empty');
   const countEl = document.getElementById('db-count');
 
   const movies = state.schedule;

@@ -1865,6 +1865,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // ══════════════════════════════════════════════════════════════
 //  Helpers
 // ══════════════════════════════════════════════════════════════
@@ -1974,7 +1976,7 @@ function getTotals(entries) {
 // ══════════════════════════════════════════════════════════════
 function renderClientList() {
   const list = document.getElementById('client-list');
-  const empty = document.getElementById('client-empty');
+  const empty = __liveOrKept('client-empty');
 
   if (!clients.length) {
     list.innerHTML = '';

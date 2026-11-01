@@ -11,6 +11,24 @@
 <style>
 /* Hallmark · macrostructure: Bento Grid · nav: N5 */
 
+/* ── Local token extensions ── */
+:root {
+  --shadow-sm:            0 2px 8px oklch(0% 0 0 / 0.08);
+  --shadow-md:            0 8px 24px oklch(24% 0.020 258 / 0.12);
+  --shadow-lg:            0 8px 24px oklch(24% 0.020 258 / 0.20);
+  --shadow-focus:         0 0 0 3px oklch(52% 0.20 256 / 0.10);
+  --color-danger-alpha:   oklch(55% 0.20 25 / 0.08);
+  --color-orange:         oklch(60% 0.20 30);
+  --color-cell-green-bg:  oklch(93% 0.04 155);
+  --color-cell-green-fg:  oklch(38% 0.14 155);
+  --color-cell-amber-bg:  oklch(95% 0.06 72);
+  --color-cell-amber-fg:  oklch(40% 0.15 72);
+  --color-cell-orange-bg: oklch(93% 0.07 45);
+  --color-cell-orange-fg: oklch(40% 0.18 40);
+  --color-cell-red-bg:    oklch(93% 0.07 25);
+  --color-cell-red-fg:    oklch(40% 0.20 25);
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -49,7 +67,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--color-paper);
   border: 1px solid var(--color-border);
   padding: 0 var(--space-4);
-  box-shadow: 0 2px 8px oklch(0% 0 0 / 0.08);
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -173,7 +191,7 @@ a { color: inherit; text-decoration: none; }
 .input-search:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px oklch(52% 0.20 256 / 0.10);
+  box-shadow: var(--shadow-focus);
 }
 .input-search::placeholder { color: var(--color-ink-muted); }
 
@@ -186,7 +204,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--color-paper);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 24px oklch(24% 0.020 258 / 0.12);
+  box-shadow: var(--shadow-md);
   max-height: 200px;
   overflow-y: auto;
 }
@@ -273,7 +291,7 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;
   transition: color 0.12s ease, background 0.12s ease;
 }
-.btn-chip-remove:hover { color: var(--color-danger); background: oklch(55% 0.20 25 / 0.08); }
+.btn-chip-remove:hover { color: var(--color-danger); background: var(--color-danger-alpha); }
 .btn-chip-remove:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 1px; }
 
 .chips-empty {
@@ -621,10 +639,10 @@ a { color: inherit; text-decoration: none; }
 }
 .data-table td:first-child { text-align: left; font-weight: 500; }
 
-.cell-green  { background: oklch(93% 0.04 155); color: oklch(38% 0.14 155); }
-.cell-amber  { background: oklch(95% 0.06 72);  color: oklch(40% 0.15 72); }
-.cell-orange { background: oklch(93% 0.07 45);  color: oklch(40% 0.18 40); }
-.cell-red    { background: oklch(93% 0.07 25);  color: oklch(40% 0.20 25); }
+.cell-green  { background: var(--color-cell-green-bg);  color: var(--color-cell-green-fg); }
+.cell-amber  { background: var(--color-cell-amber-bg);  color: var(--color-cell-amber-fg); }
+.cell-orange { background: var(--color-cell-orange-bg); color: var(--color-cell-orange-fg); }
+.cell-red    { background: var(--color-cell-red-bg);    color: var(--color-cell-red-fg); }
 .cell-na     { color: var(--color-ink-muted); }
 
 /* Report builder */
@@ -726,7 +744,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 24px oklch(24% 0.020 258 / 0.20);
+  box-shadow: var(--shadow-lg);
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -962,6 +980,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // ── Country database ─────────────────────────────────────────
 const COUNTRIES = [
   { iso2: 'US', name: 'United States',    flag: '🇺🇸' },
@@ -1238,12 +1258,6 @@ document.querySelectorAll('[data-years]').forEach(btn => {
     btn.setAttribute('aria-pressed', 'true');
     state.selectedYears = Number(btn.dataset.years);
 
-    // Clear cache entries for active countries so we re-fetch
-    // (we keep other caches for performance)
-    state.comparison.forEach(iso2 => {
-      // Only clear if not already cached for this range
-    });
-
     if (state.comparison.length) {
       refetchAll();
     }
@@ -1256,7 +1270,10 @@ async function refetchAll() {
   }
   await Promise.all(state.comparison.map(iso2 =>
     fetchInflation(iso2, state.selectedYears)
-      .catch(() => null)
+      .catch(() => {
+        toast(`Failed to reload data for ${countryInfo(iso2).name}`, 'error');
+        return null;
+      })
       .then(() => setChipLoading(iso2, false))
   ));
   render();
@@ -1265,7 +1282,7 @@ async function refetchAll() {
 // ── Render chips ──────────────────────────────────────────────
 function renderChips() {
   const list = document.getElementById('chips-list');
-  const empty = document.getElementById('chips-empty');
+  const empty = __liveOrKept('chips-empty');
 
   if (!state.comparison.length) {
     list.innerHTML = '';
@@ -1324,7 +1341,7 @@ function showMainContent() {
 function renderRealReturn() {
   const nominal = parseFloat(document.getElementById('nominal-return').value) || 0;
   const resultsEl = document.getElementById('real-return-results');
-  const emptyEl = document.getElementById('real-return-empty');
+  const emptyEl = __liveOrKept('real-return-empty');
 
   if (!state.comparison.length) {
     resultsEl.innerHTML = '';
@@ -1568,7 +1585,7 @@ function renderStatCards() {
     if (latest) {
       if (latest.value < 3) rateColor = 'var(--color-success)';
       else if (latest.value >= 15) rateColor = 'var(--color-danger)';
-      else if (latest.value >= 7) rateColor = 'oklch(60% 0.20 30)';
+      else if (latest.value >= 7) rateColor = 'var(--color-orange)';
       else if (latest.value >= 3) rateColor = 'var(--color-warn)';
     }
 

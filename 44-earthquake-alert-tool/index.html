@@ -1673,6 +1673,8 @@ td {
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 /* ── Hallmark · macrostructure: Workbench · theme: Garden · nav: N9 ── */
@@ -1695,7 +1697,7 @@ let updaterInterval = null;
 // ── DOM refs ───────────────────────────────────────────────────────────
 const tableWrap    = document.getElementById('table-wrap');
 const loadingState = document.getElementById('loading-state');
-const emptyState   = document.getElementById('empty-state');
+const emptyState   = __liveOrKept('empty-state');
 const eqTable      = document.getElementById('eq-table');
 const eqTbody      = document.getElementById('eq-tbody');
 const tableSummary = document.getElementById('table-summary');

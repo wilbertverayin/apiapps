@@ -48,8 +48,10 @@ a { color: inherit; text-decoration: none; }
   --moon-dark:        oklch(28% 0.03 240);
   --moon-stroke:      oklch(40% 0.04 240);
   --moon-light:       oklch(92% 0.04 80);
-  --cell-hover-bg:    oklch(95% 0.01 95);
-  --btn-hover-border: oklch(75% 0.02 95);
+  --cell-hover-bg:       oklch(95% 0.01 95);
+  --btn-hover-border:    oklch(75% 0.02 95);
+  --color-shadow-nav:    oklch(0% 0 0 / 0.08);
+  --color-accent-glow:   oklch(52% 0.14 155 / 0.18);
 }
 
 /* ── N5 Floating pill nav ── */
@@ -66,7 +68,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  box-shadow: 0 2px 8px oklch(0% 0 0 / 0.08);
+  box-shadow: 0 2px 8px var(--color-shadow-nav);
 }
 
 .nav-wordmark {
@@ -93,7 +95,7 @@ a { color: inherit; text-decoration: none; }
   transition: color 0.15s ease;
 }
 .nav-back:hover { color: var(--color-ink); }
-.nav-back:focus-visible { border-radius: 4px; }
+.nav-back:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; border-radius: 4px; }
 .nav-back:active { opacity: 0.7; }
 
 /* ── Bento wrapper ── */
@@ -465,7 +467,7 @@ a { color: inherit; text-decoration: none; }
 .cal-cell.selected {
   border-color: var(--color-accent);
   background: var(--color-accent-subtle);
-  box-shadow: 0 0 0 2px oklch(52% 0.14 155 / 0.18);
+  box-shadow: 0 0 0 2px var(--color-accent-glow);
 }
 .cal-cell.other-month {
   opacity: 0.38;

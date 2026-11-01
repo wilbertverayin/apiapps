@@ -1170,6 +1170,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // ── Constants & Config ─────────────────────────────────────────
 const FEEDS = {
   realestate: {
@@ -1723,7 +1725,7 @@ async function runFetch() {
   fetchLabel.textContent = 'Fetching…';
   loadingBar.classList.add('show');
 
-  const digEmpty = document.getElementById('digest-empty');
+  const digEmpty = __liveOrKept('digest-empty');
   const artGrid  = document.getElementById('articles-grid');
   digEmpty.style.display = 'none';
   artGrid.style.display  = 'none';
@@ -1801,7 +1803,7 @@ async function runFetch() {
 // ── Render digest articles ─────────────────────────────────────
 function renderDigestArticles(articles) {
   const grid = document.getElementById('articles-grid');
-  const digEmpty = document.getElementById('digest-empty');
+  const digEmpty = __liveOrKept('digest-empty');
   grid.innerHTML = '';
 
   if (!articles.length) {
@@ -1933,7 +1935,7 @@ function updateSavedBadge() {
 
 function renderSavedArticles() {
   const grid  = document.getElementById('saved-grid');
-  const empty = document.getElementById('saved-empty');
+  const empty = __liveOrKept('saved-empty');
 
   if (!state.savedArticles.length) {
     grid.style.display  = 'none';
@@ -2013,7 +2015,7 @@ function renderSavedArticles() {
 
 // ── Digest Builder ─────────────────────────────────────────────
 function renderBuilderList() {
-  const builderEmpty   = document.getElementById('builder-empty');
+  const builderEmpty   = __liveOrKept('builder-empty');
   const builderContent = document.getElementById('builder-content');
   const list           = document.getElementById('builder-article-list');
   const previewSection = document.getElementById('digest-preview-section');

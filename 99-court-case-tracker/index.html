@@ -11,6 +11,20 @@
 <style>
 /* Hallmark · macrostructure: Workbench · nav: N5 */
 
+/* ── Extended tokens ── */
+:root {
+  --color-shadow-pill:    oklch(0% 0 0 / 0.08);
+  --color-focus-ring:     oklch(50% 0.16 52 / 0.10);
+  --color-shadow-card:    oklch(20% 0.012 50 / 0.08);
+  --color-shadow-md:      oklch(20% 0.012 50 / 0.20);
+  --color-danger-subtle:  oklch(55% 0.20 25 / 0.08);
+  --color-shadow-xs:      oklch(18% 0.04 155 / 0.06);
+  --color-today:          oklch(55% 0.20 25 / 0.8);
+  --color-overdue-bg:     oklch(55% 0.20 25 / 0.12);
+  --color-thisweek-bg:    oklch(62% 0.15 72 / 0.12);
+  --color-future-bg:      oklch(42% 0.14 52 / 0.12);
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { height: 100%; overflow-x: clip; }
@@ -39,7 +53,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--color-border);
   border-radius: 999px;
   padding: 0 var(--space-4);
-  box-shadow: 0 2px 8px oklch(0% 0 0 / 0.08);
+  box-shadow: 0 2px 8px var(--color-shadow-pill);
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -136,7 +150,7 @@ a { color: inherit; text-decoration: none; }
 .input-search:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px oklch(50% 0.16 52 / 0.10);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
 }
 .input-search::placeholder { color: var(--color-ink-muted); }
 
@@ -199,6 +213,7 @@ a { color: inherit; text-decoration: none; }
 }
 .tab-btn:hover { color: var(--color-ink); }
 .tab-btn:focus-visible { color: var(--color-ink); }
+.tab-btn:active { opacity: 0.8; }
 .tab-btn.active {
   background: var(--color-accent);
   color: var(--color-paper);
@@ -223,6 +238,7 @@ a { color: inherit; text-decoration: none; }
 }
 .date-chip:hover { border-color: var(--color-accent-line); color: var(--color-accent); }
 .date-chip:focus-visible { border-color: var(--color-accent); color: var(--color-accent); }
+.date-chip:active { opacity: 0.8; }
 .date-chip.active {
   border-color: var(--color-accent);
   color: var(--color-accent);
@@ -251,6 +267,7 @@ a { color: inherit; text-decoration: none; }
 }
 .history-chip:hover { background: var(--color-accent-subtle); border-color: var(--color-accent-line); color: var(--color-accent); }
 .history-chip:focus-visible { background: var(--color-accent-subtle); border-color: var(--color-accent); color: var(--color-accent); }
+.history-chip:active { opacity: 0.8; }
 
 /* Watched list */
 .watched-scroll {
@@ -276,6 +293,7 @@ a { color: inherit; text-decoration: none; }
 }
 .watched-item:hover { background: var(--color-accent-subtle); }
 .watched-item:focus-visible { background: var(--color-accent-subtle); outline-offset: -2px; }
+.watched-item:active { opacity: 0.8; }
 .watched-item.active {
   background: var(--color-accent-subtle);
   border-left-color: var(--color-accent);
@@ -377,6 +395,7 @@ a { color: inherit; text-decoration: none; }
 }
 .main-tab:hover { color: var(--color-ink); }
 .main-tab:focus-visible { color: var(--color-ink); }
+.main-tab:active { opacity: 0.8; }
 .main-tab.active {
   color: var(--color-accent);
   border-bottom-color: var(--color-accent);
@@ -460,7 +479,7 @@ a { color: inherit; text-decoration: none; }
   animation: card-in 0.18s ease;
 }
 .case-card:hover {
-  box-shadow: 0 4px 16px oklch(20% 0.012 50 / 0.08);
+  box-shadow: 0 4px 16px var(--color-shadow-card);
   border-color: var(--color-accent-line);
 }
 @keyframes card-in {
@@ -560,7 +579,7 @@ a { color: inherit; text-decoration: none; }
   animation: card-in 0.18s ease;
   transition: box-shadow 0.15s ease;
 }
-.watched-card:hover { box-shadow: 0 4px 16px oklch(20% 0.012 50 / 0.08); }
+.watched-card:hover { box-shadow: 0 4px 16px var(--color-shadow-card); }
 .watched-card-top {
   display: flex;
   align-items: flex-start;
@@ -600,6 +619,7 @@ a { color: inherit; text-decoration: none; }
 }
 .prio-btn:hover { border-color: var(--color-accent-line); }
 .prio-btn:focus-visible { border-color: var(--color-focus); }
+.prio-btn:active { opacity: 0.8; }
 .prio-btn[data-p="high"].active   { background: var(--color-neg-bg); color: var(--color-danger);  border-color: var(--color-danger); }
 .prio-btn[data-p="medium"].active { background: var(--color-accent-bg); color: var(--color-warn);    border-color: var(--color-warn); }
 .prio-btn[data-p="low"].active    { background: var(--color-pos-bg); color: var(--color-success); border-color: var(--color-success); }
@@ -615,8 +635,9 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   transition: color 0.12s ease, background 0.12s ease;
 }
-.btn-remove-watch:hover { color: var(--color-danger); background: oklch(55% 0.20 25 / 0.08); }
-.btn-remove-watch:focus-visible { color: var(--color-danger); background: oklch(55% 0.20 25 / 0.08); }
+.btn-remove-watch:hover { color: var(--color-danger); background: var(--color-danger-subtle); }
+.btn-remove-watch:focus-visible { color: var(--color-danger); background: var(--color-danger-subtle); }
+.btn-remove-watch:active { opacity: 0.8; }
 
 /* Notes textarea */
 .notes-label {
@@ -672,9 +693,9 @@ a { color: inherit; text-decoration: none; }
   transition: box-shadow 0.12s ease;
   animation: card-in 0.18s ease;
 }
-.deadline-item:hover { box-shadow: 0 2px 8px oklch(18% 0.04 155 / 0.06); }
+.deadline-item:hover { box-shadow: 0 2px 8px var(--color-shadow-xs); }
 .deadline-item.overdue   { border-left-color: var(--color-danger); }
-.deadline-item.today     { border-left-color: oklch(55% 0.20 25 / 0.8); }
+.deadline-item.today     { border-left-color: var(--color-today); }
 .deadline-item.this-week { border-left-color: var(--color-warn); }
 .deadline-item.future    { border-left-color: var(--color-success); }
 .deadline-date {
@@ -710,10 +731,10 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;
   white-space: nowrap;
 }
-.deadline-urgency.overdue   { background: oklch(55% 0.20 25 / 0.12); color: var(--color-danger); }
-.deadline-urgency.today     { background: oklch(55% 0.20 25 / 0.08); color: oklch(55% 0.20 25 / 0.8); }
-.deadline-urgency.this-week { background: oklch(62% 0.15 72 / 0.12); color: var(--color-warn); }
-.deadline-urgency.future    { background: oklch(42% 0.14 52 / 0.12); color: var(--color-success); }
+.deadline-urgency.overdue   { background: var(--color-overdue-bg); color: var(--color-danger); }
+.deadline-urgency.today     { background: var(--color-danger-subtle); color: var(--color-today); }
+.deadline-urgency.this-week { background: var(--color-thisweek-bg); color: var(--color-warn); }
+.deadline-urgency.future    { background: var(--color-future-bg); color: var(--color-success); }
 .btn-del-deadline {
   width: 24px; height: 24px;
   display: flex; align-items: center; justify-content: center;
@@ -726,8 +747,9 @@ a { color: inherit; text-decoration: none; }
   transition: color 0.12s ease, background 0.12s ease;
   flex-shrink: 0;
 }
-.btn-del-deadline:hover { color: var(--color-danger); background: oklch(55% 0.20 25 / 0.08); }
-.btn-del-deadline:focus-visible { color: var(--color-danger); background: oklch(55% 0.20 25 / 0.08); }
+.btn-del-deadline:hover { color: var(--color-danger); background: var(--color-danger-subtle); }
+.btn-del-deadline:focus-visible { color: var(--color-danger); background: var(--color-danger-subtle); }
+.btn-del-deadline:active { opacity: 0.8; }
 
 /* Section header */
 .section-hd {
@@ -760,7 +782,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 24px oklch(20% 0.012 50 / 0.20);
+  box-shadow: 0 8px 24px var(--color-shadow-md);
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 0.2s ease, transform 0.2s ease;

@@ -11,6 +11,15 @@
 <style>
 /* Hallmark · macrostructure: Bento Grid · nav: N5 */
 
+/* ── Tokens (local extensions) ── */
+:root {
+  --shadow-nav-pill: 0 2px 8px var(--color-shadow);
+  --shadow-input-focus: 0 0 0 3px color-mix(in oklch, var(--color-accent) 12%, transparent);
+  --shadow-btn-hover: 0 4px 12px color-mix(in oklch, var(--color-accent) 24%, transparent);
+  --color-danger-bg: color-mix(in oklch, var(--color-danger) 8%, transparent);
+  --color-danger-border-subtle: color-mix(in oklch, var(--color-danger) 20%, transparent);
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -54,7 +63,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  box-shadow: 0 2px 8px oklch(0% 0 0 / 0.08);
+  box-shadow: var(--shadow-nav-pill);
   white-space: nowrap;
 }
 
@@ -88,6 +97,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-all-apps:hover { color: var(--color-ink); }
 .nav-all-apps:active { color: var(--color-accent); }
+.nav-all-apps:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: 2px; }
 
 /* ── Page wrap ── */
 .page-wrap {
@@ -219,7 +229,7 @@ a { color: inherit; text-decoration: none; }
 #search-input:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent) 12%, transparent);
+  box-shadow: var(--shadow-input-focus);
 }
 
 .search-clear-btn {
@@ -258,7 +268,7 @@ a { color: inherit; text-decoration: none; }
   min-height: 44px;
   transition: opacity 0.15s ease, transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out);
 }
-.search-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 4px 12px color-mix(in oklch, var(--color-accent) 24%, transparent); }
+.search-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: var(--shadow-btn-hover); }
 .search-btn:active { transform: translateY(0); opacity: 1; }
 
 /* Divider */
@@ -537,8 +547,8 @@ a { color: inherit; text-decoration: none; }
 .state-error-icon {
   width: 60px;
   height: 60px;
-  background: color-mix(in oklch, var(--color-danger) 8%, transparent);
-  border: 1px solid color-mix(in oklch, var(--color-danger) 20%, transparent);
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border-subtle);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;

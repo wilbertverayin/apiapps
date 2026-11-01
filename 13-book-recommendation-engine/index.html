@@ -371,6 +371,7 @@ button { font-family: var(--font-body); }
   white-space: nowrap;
 }
 .chip:hover { background: var(--color-accent-subtle); border-color: var(--color-accent-line); color: var(--color-accent); }
+.chip:active { opacity: 0.8; }
 .chip:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .chip.active { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-paper); }
 
@@ -405,6 +406,7 @@ button { font-family: var(--font-body); }
   transition: background 0.12s var(--ease-out), border-color 0.12s var(--ease-out), color 0.12s var(--ease-out);
 }
 .pref-btn:hover { border-color: var(--color-accent-line); color: var(--color-accent); }
+.pref-btn:active { opacity: 0.8; }
 .pref-btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .pref-btn.active { background: var(--color-accent-subtle); border-color: var(--color-accent); color: var(--color-accent); font-weight: 600; }
 
@@ -490,6 +492,7 @@ select.input-sm {
   white-space: nowrap;
 }
 .btn-secondary:hover { border-color: var(--color-accent-line); color: var(--color-accent); background: var(--color-accent-subtle); }
+.btn-secondary:active { opacity: 0.8; }
 .btn-secondary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 
 /* ── Saved Profiles ── */
@@ -564,6 +567,7 @@ select.input-sm {
   transition: background 0.12s var(--ease-out);
 }
 .session-item:hover { background: var(--color-accent-subtle); }
+.session-item:active { opacity: 0.8; }
 .session-item:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 
 .session-item-title {
@@ -918,6 +922,7 @@ select.input-sm {
   white-space: nowrap;
 }
 .reading-list-toggle:hover { transform: translateY(-2px); box-shadow: 0 8px 20px var(--color-shadow); }
+.reading-list-toggle:active { transform: translateY(0); box-shadow: none; opacity: 0.9; }
 .reading-list-toggle:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 
 .reading-list-count {
@@ -1482,6 +1487,8 @@ select.input-sm {
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // ── Constants ─────────────────────────────────────────────────────────────
 const GENRES = [
   'Mystery', 'Literary Fiction', 'Science Fiction', 'Historical',
@@ -1610,7 +1617,7 @@ function toast(msg, type = '') {
 // ── Genre Chips (sidebar + empty state) ───────────────────────────────────
 function renderGenreChips() {
   const sidebar = document.getElementById('genre-chips');
-  const empty   = document.getElementById('empty-genre-grid');
+  const empty   = __liveOrKept('empty-genre-grid');
 
   sidebar.innerHTML = '';
   empty.innerHTML   = '';

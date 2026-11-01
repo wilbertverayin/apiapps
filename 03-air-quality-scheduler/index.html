@@ -1097,6 +1097,8 @@ button { font-family: var(--font-body); cursor: pointer; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 /* Hallmark · macrostructure: Long Document · theme: Garden · nav: N13 */
 
@@ -1908,7 +1910,7 @@ function renderSavedList() {
 
 // ── Event calendar ────────────────────────────────────────────
 function renderCalendar() {
-  const calEmpty = document.getElementById('calendar-empty');
+  const calEmpty = __liveOrKept('calendar-empty');
   const calWrap  = document.getElementById('calendar-wrap');
   const formWrap = document.getElementById('event-form-wrap');
   const evtsWrap = document.getElementById('events-list-wrap');

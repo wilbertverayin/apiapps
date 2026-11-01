@@ -543,6 +543,8 @@
 </main>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 const APPS = [
   { num:'01', slug:'01-holiday-campaign-calendar',         name:'Holiday Campaign Calendar',         cat:'data'    },
   { num:'02', slug:'02-currency-rate-alert-system',        name:'Currency Rate Alert System',         cat:'data'    },
@@ -660,7 +662,7 @@ const BASE = '../';
 const grid = document.getElementById('grid');
 const countEl = document.getElementById('count');
 const searchEl = document.getElementById('search');
-const emptyState = document.getElementById('empty-state');
+const emptyState = __liveOrKept('empty-state');
 const clearSearchBtn = document.getElementById('clear-search');
 
 let toastTimer = null;

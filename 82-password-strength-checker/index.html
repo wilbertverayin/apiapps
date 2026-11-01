@@ -1193,6 +1193,8 @@ a { color: inherit; text-decoration: none; }
 
 <!-- N12 scroll retract -->
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 (function () {
   var nav = document.getElementById('site-nav');
   var root = document.documentElement;
@@ -1327,7 +1329,7 @@ const breachResultError   = document.getElementById('breach-result-error');
 const feedbackWarning     = document.getElementById('feedback-warning');
 const feedbackWarningText = document.getElementById('feedback-warning-text');
 const suggestionsList     = document.getElementById('suggestions-list');
-const feedbackEmpty       = document.getElementById('feedback-empty');
+const feedbackEmpty       = __liveOrKept('feedback-empty');
 
 const genLengthSlider = document.getElementById('gen-length-slider');
 const genLengthVal    = document.getElementById('gen-length-val');

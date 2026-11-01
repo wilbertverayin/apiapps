@@ -1254,6 +1254,8 @@ select.input-field {
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // N12 nav scroll retract — listen on right panel (split-screen, panel scrolls)
 (function() {
   const nav = document.getElementById('main-nav');
@@ -2137,7 +2139,7 @@ function switchTab(tabName) {
     t.setAttribute('aria-selected', String(active));
   });
   // Analysis pane visibility
-  const analysisEl = document.getElementById('main-empty');
+  const analysisEl = __liveOrKept('main-empty');
   const resultsEl = document.getElementById('results');
   const historyEl = document.getElementById('history-pane');
   if (analysisEl) analysisEl.style.display = isHistory ? 'none' : (currentAnalysis ? 'none' : '');

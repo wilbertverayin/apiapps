@@ -1123,6 +1123,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 // ── EU 14 Allergens ────────────────────────────────────────────
@@ -1665,7 +1667,7 @@ async function doSearch() {
   const btn     = document.getElementById('btn-search');
   const inner   = document.getElementById('search-btn-inner');
   const loading = document.getElementById('search-loading');
-  const empty   = document.getElementById('search-empty');
+  const empty   = __liveOrKept('search-empty');
   const results = document.getElementById('search-results-list');
   const detail  = document.getElementById('product-detail');
 

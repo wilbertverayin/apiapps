@@ -1442,6 +1442,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
@@ -1964,7 +1966,7 @@ function renderParkCard(p) {
 function renderCalendar() {
   const title = document.getElementById('cal-title');
   const grid  = document.getElementById('cal-grid');
-  const empty = document.getElementById('calendar-empty');
+  const empty = __liveOrKept('calendar-empty');
 
   if (!followedParks.length) {
     document.getElementById('calendar-wrap').style.display = 'none';

@@ -1059,6 +1059,8 @@ a { color: inherit; text-decoration: none; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 // ── Utilities ─────────────────────────────────────────────────
 const uid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
 const todayISO = () => new Date().toISOString().slice(0, 10);
@@ -1206,7 +1208,7 @@ function getFilteredAnimals() {
 // ── Roster render ─────────────────────────────────────────────
 function renderRoster() {
   const grid = document.getElementById('animal-grid');
-  const emptyEl = document.getElementById('roster-empty');
+  const emptyEl = __liveOrKept('roster-empty');
   const list = getFilteredAnimals();
 
   if (!list.length) {
@@ -1670,7 +1672,7 @@ function buildEmailHTML(bodyText, shelter, subject) {
 // ── Adoption Log ──────────────────────────────────────────────
 function renderLog() {
   const tbody = document.getElementById('log-tbody');
-  const emptyEl = document.getElementById('log-empty');
+  const emptyEl = __liveOrKept('log-empty');
 
   if (!adoptionLog.length) {
     tbody.innerHTML = '';
@@ -1784,7 +1786,7 @@ function computeMatchCounts() {
 
 function renderAdopters() {
   const list  = document.getElementById('adopter-list');
-  const empty = document.getElementById('adopter-empty');
+  const empty = __liveOrKept('adopter-empty');
   if (!adopters.length) {
     list.innerHTML = '';
     empty.style.display = 'block';
@@ -1926,7 +1928,7 @@ function markAlertSent(queueId) {
 
 function renderAlertQueue() {
   const tbody = document.getElementById('queue-tbody');
-  const empty = document.getElementById('queue-empty');
+  const empty = __liveOrKept('queue-empty');
   if (!alertQueue.length) {
     tbody.innerHTML = '';
     empty.style.display = 'block';
@@ -1952,7 +1954,7 @@ function renderAlertQueue() {
 // ── Shelter Dashboard ─────────────────────────────────────────
 function renderDashboard() {
   const grid  = document.getElementById('dashboard-grid');
-  const empty = document.getElementById('dashboard-empty');
+  const empty = __liveOrKept('dashboard-empty');
   const available = animals.filter(a => a.status !== 'Adopted');
   if (!available.length) {
     grid.innerHTML = '';

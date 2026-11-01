@@ -11,6 +11,12 @@
 <style>
 /* Hallmark · macrostructure: Stat-Led · nav: N1b */
 
+/* ── Tokens (local extensions) ── */
+:root {
+  /* #888 used as SVG fill in .select-score background-image data URI */
+  --color-select-arrow: #888;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { overflow-x: clip; }
 body {
@@ -88,6 +94,7 @@ em { font-style: normal; }
   transition: border-color 0.15s var(--ease-out), color 0.15s var(--ease-out);
 }
 .nav-back:hover { color: var(--color-ink); border-color: var(--color-accent-line); }
+.nav-back:active { color: var(--color-accent); border-color: var(--color-accent); opacity: 0.8; }
 .nav-back:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 
 /* ── Page layout ── */
@@ -269,6 +276,7 @@ em { font-style: normal; }
   transition: background 0.12s ease, border-color 0.12s ease, color 0.12s var(--ease-out);
 }
 .type-tab:hover { color: var(--color-ink); border-color: var(--color-accent-line); }
+.type-tab:active { opacity: 0.75; }
 .type-tab:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .type-tab.active {
   background: var(--color-accent);
@@ -311,6 +319,7 @@ em { font-style: normal; }
   white-space: nowrap;
 }
 .chip:hover { border-color: var(--color-accent-line); color: var(--color-ink); }
+.chip:active { opacity: 0.75; }
 .chip:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .chip.active {
   background: var(--color-accent-subtle);
@@ -329,7 +338,7 @@ em { font-style: normal; }
   cursor: pointer;
   transition: border-color 0.15s var(--ease-out);
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); /* fill value matches --color-select-arrow */
   background-repeat: no-repeat;
   background-position: right var(--space-3) center;
   white-space: nowrap;
@@ -353,6 +362,7 @@ em { font-style: normal; }
   transition: border-color 0.12s ease, color 0.12s var(--ease-out);
 }
 .btn-copy-all:hover { border-color: var(--color-accent-line); color: var(--color-accent); }
+.btn-copy-all:active { opacity: 0.75; }
 .btn-copy-all:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 
 /* ── Load bar ── */
@@ -418,6 +428,7 @@ em { font-style: normal; }
   transition: background 0.12s var(--ease-out);
 }
 .example-btn:hover { background: var(--color-accent-bg); }
+.example-btn:active { opacity: 0.75; transform: scale(0.97); }
 .example-btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 
 /* ── Results area ── */
@@ -594,6 +605,7 @@ em { font-style: normal; }
   transition: border-color 0.12s ease, color 0.12s var(--ease-out);
 }
 .btn-sm:hover { border-color: var(--color-accent-line); color: var(--color-accent); }
+.btn-sm:active { opacity: 0.75; }
 .btn-sm:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 
 .saved-words-wrap {
@@ -627,6 +639,7 @@ em { font-style: normal; }
   align-items: center;
 }
 .saved-chip-remove:hover { color: var(--color-danger); }
+.saved-chip-remove:active { color: var(--color-danger); opacity: 0.7; }
 .saved-chip-remove:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .saved-empty {
   font-size: var(--text-sm);
@@ -650,6 +663,7 @@ em { font-style: normal; }
   transition: background 0.10s ease, color 0.10s var(--ease-out);
 }
 .recent-item:hover { background: var(--color-paper-2); color: var(--color-ink); }
+.recent-item:active { background: var(--color-accent-subtle); color: var(--color-accent); }
 .recent-item:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .recent-item-icon { font-size: 0.7rem; opacity: 0.5; flex-shrink: 0; }
 .recent-empty { font-size: var(--text-sm); color: var(--color-ink-muted); }
@@ -854,6 +868,8 @@ em { font-style: normal; }
 <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
 <script>
+function __liveOrKept(id){var k=window.__keepEl||(window.__keepEl={});var e=document.getElementById(id);if(e)k[id]=e;return e||k[id]||null}
+
 'use strict';
 
 // ── State ─────────────────────────────────────────────────────
@@ -876,7 +892,7 @@ const LS_RECENT  = 'rhyme_recent_v1';
 const wordInput    = document.getElementById('word-input');
 const btnFind      = document.getElementById('btn-find');
 const loadBar      = document.getElementById('load-bar');
-const emptyState   = document.getElementById('empty-state');
+const emptyState   = __liveOrKept('empty-state');
 const resultsArea  = document.getElementById('results-area');
 const resultsHeader = document.getElementById('results-header');
 const resultsTitle = document.getElementById('results-title');

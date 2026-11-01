@@ -12,7 +12,7 @@
   --color-ink-muted:    oklch(62% 0.012 286);
   --color-muted:        oklch(62% 0.012 286);
   --color-neutral:      oklch(68% 0.010 288);
-  --color-faint:        oklch(38% 0.012 288);
+  --color-faint:        oklch(50% 0.012 288);
 
   --color-accent:       oklch(70% 0.22 292);
   --color-accent-dim:   oklch(54% 0.18 292);
