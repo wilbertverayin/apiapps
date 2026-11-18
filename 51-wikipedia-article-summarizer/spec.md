@@ -10,13 +10,13 @@ Independent researchers, academic consultants, and market research firms who reg
 Researchers waste significant time reading full Wikipedia articles to extract the core facts, key dates, and notable entities relevant to their specific research question. Copying, pasting, and reformatting content into structured briefs is repetitive and error-prone. When dozens of articles must be processed for a single project, the manual effort becomes a serious productivity bottleneck.
 
 ## Solution
-A research assistant that accepts a Wikipedia article title or URL, fetches the full content via the Wikipedia API, and returns a structured brief with a summary, key facts, timeline, related topics, and source citations — ready to paste into a report or export as a document.
+A research assistant that accepts a Wikipedia article title or URL, fetches the intro extract, categories, and links via the Wikipedia API, and returns a structured brief with a summary, key facts, categories, related topics, and a source link, ready to export as a document.
 
 ## Core Features (MVP)
 - Article lookup by title or Wikipedia URL
-- Auto-generated structured brief (summary, key facts, notable entities, timeline, related topics)
+- Rule-based structured brief (summary, key facts, categories, related topics)
 - Project workspace to organize briefs by research project
-- Export brief as PDF or Markdown
+- Export brief as PDF (print) or Markdown
 - Batch mode — submit a list of article titles and receive all briefs in one export
 
 ## API Used
@@ -29,5 +29,5 @@ Freemium — free for 10 summaries/month; Pro at $15/month for unlimited summari
 Next.js + Supabase + OpenAI API (for structured summarization) + Resend
 
 ## MVP Scope
-**Included in v1:** Article lookup, AI-structured brief generation, project workspace, PDF and Markdown export, batch mode up to 20 articles.
+**Included in v1:** Article lookup, rule-based brief generation, project workspace, PDF and Markdown export, batch mode up to 20 articles.
 **Out of scope:** Browser extension, real-time Wikipedia edit monitoring, citation management integration (Zotero, Mendeley), multi-language brief translation.

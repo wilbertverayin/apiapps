@@ -29,4 +29,4 @@ Freemium — free for up to 5 team members; Pro plan at $9/month for unlimited m
 Next.js + Supabase + Resend
 
 ## MVP Scope
-In scope: timezone lookup, overlap grid, shareable link, ICS export, up to 5 members free tier. Out of scope: native calendar integrations (Google/Outlook sync), recurring meeting scheduling, user accounts/authentication in v1.
+In scope: timezone lookup, overlap grid, shareable link, ICS export, up to 10 members. Out of scope: native calendar integrations (Google/Outlook sync), recurring meeting scheduling, user accounts/authentication in v1.

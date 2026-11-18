@@ -10,13 +10,13 @@ Sports bars, restaurants, and entertainment venues in the US that host NFL and N
 Venues lose potential game-day revenue because customers simply forget when games are scheduled, especially mid-week NBA matchups. Manually sending game-day notifications requires staff time and a consistent process most small venues don't have. Generic marketing emails get ignored, but a timely "your team plays tonight" message converts.
 
 ## Solution
-A venue management tool where the owner selects their featured teams and connects their customer list. The app automatically sends branded game-day alert emails and SMS messages to subscribers the morning of each game, including tip-off/kickoff time, opponent, and a custom venue CTA.
+A venue tool where the owner selects their featured teams and keeps a subscriber email list. The app generates game-day alert copy from templates with the venue name, tip-off/kickoff time, and opponent, and previews it for the list; nothing is actually sent.
 
 ## Core Features (MVP)
 - NFL and NBA team selection per venue
-- Customer subscriber list management (import CSV or embed signup widget)
-- Automated game-day morning alerts via email and SMS
-- Customizable message templates with venue branding and CTA
+- Subscriber email list management (add emails or import CSV)
+- Game-day alert copy generation and send preview (no delivery)
+- Message templates (game day, result, preview) with venue name
 - Game schedule display for venue owner dashboard
 
 ## API Used
@@ -29,4 +29,4 @@ Subscription — $39/month per venue for 1 sport and up to 500 subscribers; $79/
 Next.js + Supabase + Resend + Twilio
 
 ## MVP Scope
-In scope: NFL/NBA schedule polling, subscriber management, automated game-day alerts, template editor, venue dashboard. Out of scope: live in-game score push notifications, POS system integration, multi-location chain management in v1.
+In scope: NFL/NBA schedule polling, subscriber management, alert copy generation and preview, message templates, venue dashboard. Out of scope: live in-game score push notifications, POS system integration, multi-location chain management in v1.

@@ -1,7 +1,7 @@
 # ISBN Book Lookup for Used Bookstores
 
 ## Tagline
-Scan any book's ISBN and instantly know what you have — title, author, edition, value category, and shelf label, all in one tap.
+Scan any book's ISBN and instantly know what you have, title, author, edition, condition, and shelf category, all in one tap.
 
 ## Target Market
 Independent used bookstores, secondhand book dealers, and charity shops that process donated or purchased books and need fast identification without manual data entry.
@@ -13,7 +13,7 @@ Used bookstore staff spend hours manually identifying books from donation bins �
 A mobile-friendly web app where staff scan or type an ISBN and instantly see the book's full details — title, author, publisher, edition, page count, genre, and cover image — fetched from Open Library. Staff can assign a condition rating and shelf category, then add the book to a simple inventory list with one tap.
 
 ## Core Features (MVP)
-- ISBN input (manual type or mobile camera scan)
+- ISBN input (manual type or camera photo scan where the browser supports BarcodeDetector)
 - Book detail display: title, author, publisher, year, edition, genre, cover image
 - Condition rating selector (like new, good, fair, poor)
 - Shelf/category assignment (fiction, non-fiction, children's, etc.)

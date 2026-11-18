@@ -10,14 +10,14 @@ Small customer support teams and helpdesks at SaaS companies or e-commerce brand
 Support teams handling multilingual inboxes waste time manually identifying the language of each ticket before routing it, leading to delayed responses and customer frustration. Routing a French-speaking customer to an English-only agent creates a poor experience and increases handle time. Most helpdesk tools lack built-in language detection and routing based on message language.
 
 ## Solution
-The app detects the language of incoming support messages via API, tags each ticket with the detected language and confidence score, and applies routing rules to assign the ticket to an agent with matching language skills. A dashboard shows language volume trends.
+The app detects the language of pasted support messages in the browser using the franc library, tags each ticket with the detected language and confidence score, and applies routing rules to assign the ticket to an agent with matching language skills. A dashboard shows language volume trends.
 
 ## Core Features (MVP)
-- Paste or webhook-receive a support message for instant language detection
+- Paste a support message for instant language detection
 - Language tag with ISO 639-1 code, language name, and confidence score
 - Routing rule builder: assign language X to agent or queue Y
 - Language volume dashboard (by day, week, month)
-- Zendesk webhook integration for automated tagging and routing
+- Zendesk webhook that posts detection results from the page
 
 ## API Used
 - DetectLanguage API — detects the language of any text input with confidence scoring, supporting 164 languages

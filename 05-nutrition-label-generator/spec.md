@@ -16,7 +16,7 @@ Users enter their recipe ingredients and quantities, and the app fetches nutriti
 - Ingredient search with nutritional data lookup by ingredient name
 - Recipe builder with adjustable ingredient quantities and yield size
 - Automatic calculation of calories, macros, vitamins, and minerals per serving
-- Print-ready nutrition label output (FDA and EU format options)
+- Print-ready nutrition label output (FDA format, PNG download or print)
 - Save and manage multiple product recipes
 
 ## API Used
@@ -29,5 +29,5 @@ Usage-based — free for 3 saved recipes; Pro at $25/month for unlimited recipes
 Next.js + Supabase + PDFKit (or Puppeteer for PDF rendering)
 
 ## MVP Scope
-Included in v1: ingredient search, recipe builder, nutrition panel calculation, basic FDA-format label image/PDF export.
+Included in v1: ingredient search, recipe builder, nutrition panel calculation, basic FDA-format label image (PNG) export and print.
 Out of scope: barcode generation, allergen declaration automation, regulatory filing, direct print-shop integration.

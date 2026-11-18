@@ -1,7 +1,7 @@
 # Barcode Product Lookup for Inventory
 
 ## Tagline
-Scan a barcode, get the product — instantly look up item details, nutritional data, and category for faster inventory management.
+Type a barcode, get the product, instantly look up item details, nutritional data, and category for faster inventory management.
 
 ## Target Market
 Small grocery stores, health food shops, specialty food retailers, and small-scale distributors that manually manage product inventory and need faster item identification.
@@ -10,12 +10,12 @@ Small grocery stores, health food shops, specialty food retailers, and small-sca
 Small food retailers spend significant time manually entering product names and details when restocking or auditing inventory, because their POS systems don't always recognize new or regional products. Looking up product information from supplier sheets is slow and error-prone. Staff turnover means new employees frequently mis-categorize products during receiving.
 
 ## Solution
-A web and mobile-friendly app where warehouse staff or store owners scan or type a product barcode and instantly retrieve the product name, brand, category, ingredients, nutritional facts, and image — sourced from Open Food Facts. Results can be exported to a simple inventory log or copied to their existing system.
+A web and mobile-friendly app where warehouse staff or store owners type a product barcode and instantly retrieve the product name, brand, category, ingredients, nutritional facts, and image, sourced from Open Food Facts. Results can be exported to a simple inventory log or copied to their existing system.
 
 ## Core Features (MVP)
-- Barcode input (manual entry or camera scan on mobile)
+- Barcode input (manual entry)
 - Instant product lookup: name, brand, category, image, nutritional data
-- Lookup history log with timestamp and user
+- Lookup history log with timestamp
 - CSV export of looked-up products for inventory import
 - Manual data override for products not found in the database
 

@@ -10,14 +10,14 @@ Coaches, wellness brands, corporate HR teams, and newsletter creators building d
 Creators who want to deliver a consistent daily quote to their audience must either curate quotes manually (time-consuming) or rely on generic quote widgets that carry another brand's identity. There is no white-label tool that automates daily quote curation, branding, and delivery for non-technical creators. The result is either inconsistent delivery or a forgettable off-brand experience.
 
 ## Solution
-The app fetches curated quotes by topic or author, lets users apply their brand (logo, colors, typography), and delivers a beautifully formatted daily quote via email, embeddable widget, or shareable image — all on autopilot.
+The app fetches quotes filterable by author, lets users style a quote card (colors, typography), and offers an embeddable widget snippet and a downloadable PNG image.
 
 ## Core Features (MVP)
-- Quote library browser filtered by topic (motivation, leadership, resilience) and author
-- Branded quote card builder with logo, font, and color customization
-- Subscriber list management with daily email delivery
-- Embeddable quote widget for websites (auto-refreshes daily)
-- One-click shareable quote image export for social media
+- Quote library browser filtered by author
+- Branded quote card builder with font and color customization
+- Subscriber list management (add emails, export CSV; no email delivery)
+- Embeddable quote widget snippet for websites (shows a random quote on each load)
+- One-click PNG download of the quote card
 
 ## API Used
 - Quotable API — provides a free, open-source REST API of curated quotes filterable by author, tag, and length
@@ -29,5 +29,5 @@ Freemium — free for up to 50 subscribers and basic branding; Pro at $15/month 
 Next.js + Supabase + Resend + Cloudinary (for image generation)
 
 ## MVP Scope
-Included in v1: quote browsing by topic/author, brand card builder, subscriber management, daily email delivery, embeddable widget.
+Included in v1: quote browsing by author, brand card builder, subscriber list management, embeddable widget, PNG export.
 Out of scope: AI-generated quotes, custom quote submission by users, Slack/Teams delivery, analytics beyond open rates.

@@ -10,13 +10,13 @@ Freelance copywriters, advertising creatives, and marketing teams at SMBs that n
 Copywriters brainstorming rhyming taglines or jingle copy waste time cycling through mental word associations or cluttered rhyme sites full of irrelevant results. Most rhyme tools return every possible rhyme with no filtering by syllable count, word frequency, or semantic relevance. There is no tool purpose-built for advertising copy use cases.
 
 ## Solution
-A focused rhyme-finding tool where copywriters enter a word and instantly get rhyme suggestions filtered by syllable count, commonality (to avoid obscure words), and optionally by category (action words, emotions, brand-adjacent terms). Results are displayed in a copywriter-friendly grid for fast scanning and selection.
+A focused rhyme-finding tool where copywriters enter a word and instantly get rhyme suggestions filtered by syllable count and limited to the top-scoring results. Results are displayed in a copywriter-friendly grid for fast scanning and selection.
 
 ## Core Features (MVP)
-- Rhyme lookup with results grouped by rhyme quality (perfect, near, homophones)
+- Rhyme lookup with results grouped by syllable count
 - Syllable count filter to match meter
-- Word frequency filter (common words only toggle) to avoid obscure results
-- Near-rhyme and slant-rhyme suggestions tab
+- Result limit (top 20, top 50, all) ranked by Datamuse score
+- Near-rhyme and sounds-like suggestion tabs
 - Copy-to-clipboard for individual words or full result sets
 
 ## API Used
@@ -29,4 +29,4 @@ Freemium — unlimited lookups free; Pro at $6/month for saved project boards, b
 Next.js + Tailwind CSS + Vercel (no backend needed for core lookups)
 
 ## MVP Scope
-In scope: perfect and near rhyme lookup, syllable filter, frequency filter, copy-to-clipboard, basic saved lists. Out of scope: AI-generated tagline suggestions using rhymes, full jingle lyric builder, team collaboration boards in v1.
+In scope: perfect and near rhyme lookup, syllable filter, result limit, copy-to-clipboard, basic saved lists. Out of scope: AI-generated tagline suggestions using rhymes, full jingle lyric builder, team collaboration boards in v1.

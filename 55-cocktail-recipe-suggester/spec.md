@@ -17,7 +17,7 @@ A cocktail planning tool where bar managers enter their available ingredients an
 - Cocktail match engine — returns recipes achievable with current stock
 - Recipe detail view with ingredients, measures, and preparation method
 - Save and organize favorite or featured cocktails into a menu draft
-- Export menu draft as a printable PDF or shareable link
+- Print menu draft (save as PDF from the print dialog)
 
 ## API Used
 - CocktailDB API — provides a database of cocktail recipes with ingredient lists, measures, instructions, and drink images
@@ -29,5 +29,5 @@ Freemium — free for up to 20 cocktail saves; Bar Pro at $25/month for unlimite
 Next.js + Supabase + Resend
 
 ## MVP Scope
-**Included in v1:** Ingredient input, cocktail match engine, recipe detail view, saved menu drafts, PDF and shareable link export.
+**Included in v1:** Ingredient input, cocktail match engine, recipe detail view, saved menu drafts, print menu export.
 **Out of scope:** POS inventory sync, supplier ordering integration, cost calculation per cocktail, customer-facing menu QR code, staff training module.

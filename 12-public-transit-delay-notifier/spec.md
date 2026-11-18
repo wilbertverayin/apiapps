@@ -1,7 +1,7 @@
 # Public Transit Delay Notifier for Commuters
 
 ## Tagline
-Know before you go — get notified when your daily transit route is running late.
+Know before you go, see when your daily transit route is running late.
 
 ## Target Market
 Daily commuters, remote workers with occasional office days, and HR teams managing employee commute welfare in urban areas.
@@ -10,14 +10,14 @@ Daily commuters, remote workers with occasional office days, and HR teams managi
 Commuters waste time standing on platforms or at bus stops because they have no proactive alert system for their specific route delays. General transit apps show delays only after you open them manually. For workers with fixed meeting schedules, even a 5-minute delay awareness window can prevent cascading tardiness.
 
 ## Solution
-Users configure their regular transit routes, and the app monitors real-time delay data, proactively pushing alerts via SMS or email when a delay above a threshold is detected on their route — before the user has left home.
+Users configure their regular transit routes, and the app monitors real-time delay data and flags routes with a delay above a threshold, with copyable alert text.
 
 ## Core Features (MVP)
-- Route configuration using transit line, stop, and direction
+- Route configuration by selecting transit lines into saved commutes
 - Real-time delay monitoring with configurable alert threshold (e.g., 5+ minutes)
-- Proactive SMS and email alerts before the user's scheduled departure time
+- Copyable alert text for delayed routes (no SMS or email is sent)
 - Delay history log per route for the past 14 days
-- Snooze and pause alerts (e.g., on vacation, work-from-home days)
+- Pause alerts toggle and weekdays-only setting
 
 ## API Used
 - Transitland API — provides real-time GTFS-RT feed data including vehicle positions, trip updates, and service alerts for transit agencies worldwide
@@ -29,5 +29,5 @@ Freemium — free for 1 route and email alerts; Pro at $5/month for 5 routes and
 Next.js + Supabase + Resend + Twilio
 
 ## MVP Scope
-Included in v1: route setup, delay monitoring, proactive email/SMS alerts, delay history log, alert pause toggle.
+Included in v1: route setup, delay monitoring, copyable delay alert text, delay history log, alert pause toggle.
 Out of scope: live map view, trip planning, multi-modal journey optimization, native mobile app.

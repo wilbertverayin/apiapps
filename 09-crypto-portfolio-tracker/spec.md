@@ -1,7 +1,7 @@
 # Crypto Portfolio Tracker for SMBs
 
 ## Tagline
-Track your business crypto holdings, P&L, and tax exposure in one clean dashboard — no trading jargon required.
+Track your business crypto holdings, P&L, and capital gains in one clean dashboard, no trading jargon required.
 
 ## Target Market
 Small businesses and freelancers who accept or hold cryptocurrency as part of their treasury or client payments.
@@ -10,7 +10,7 @@ Small businesses and freelancers who accept or hold cryptocurrency as part of th
 Small businesses holding crypto assets struggle to track portfolio value, realized gains, and tax exposure without resorting to complex trading tools designed for retail investors. Accounting for crypto income requires accurate cost-basis and price history, which most SMBs lack. There is no simple, business-focused crypto portfolio tool that speaks the language of accountants.
 
 ## Solution
-The app lets businesses log crypto holdings and transactions, then uses live price data to calculate current portfolio value, unrealized P&L, and estimated tax exposure. Reports are exportable in formats friendly to accountants.
+The app lets businesses log crypto holdings and transactions, then uses live price data to calculate current portfolio value, unrealized P&L, and estimated capital gains. Transactions are exportable as CSV for accountants.
 
 ## Core Features (MVP)
 - Manual transaction log (buy, receive, spend) with date, amount, and coin

@@ -16,7 +16,7 @@ A web app where users upload a prospect list CSV, and the app validates each ema
 - CSV upload with email column detection
 - Bulk validation: syntax check, domain/MX check, mailbox reachability, disposable domain detection
 - Risk classification per email (safe, risky, invalid, disposable)
-- Cleaned CSV export with only safe addresses
+- Cleaned CSV export excluding addresses that fail format and TLD checks
 - Bounce rate reduction estimate shown on results page
 
 ## API Used
@@ -29,4 +29,4 @@ Credit-based — free 100 validations on signup; $19 for 5,000 credits; $49 for 
 Next.js + Supabase + Stripe
 
 ## MVP Scope
-In scope: CSV upload, bulk validation, risk scoring, cleaned CSV export, credit billing. Out of scope: direct ESP integrations (Mailchimp/Instantly sync), real-time webhook validation, domain warm-up tracking in v1.
+In scope: CSV upload, bulk validation, risk scoring, cleaned CSV export. Out of scope: direct ESP integrations (Mailchimp/Instantly sync), real-time webhook validation, domain warm-up tracking in v1.

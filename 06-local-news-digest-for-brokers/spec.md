@@ -10,14 +10,14 @@ Independent real estate brokers and small property/insurance agencies managing a
 Brokers need to stay informed about local news — zoning changes, business openings, crime reports, infrastructure projects — that directly affect property values and client decisions. Monitoring local news manually across multiple sources is time-consuming and easy to miss. Generic national news aggregators do not provide the neighborhood-level insight brokers need.
 
 ## Solution
-The app monitors selected local news sources via keyword and location filters, curates the most relevant articles daily, and delivers a clean digest to the broker's inbox each morning. Brokers can tag articles to client accounts for follow-up.
+The app monitors selected local news sources via keyword and location filters, curates the most relevant articles on demand, and lets the broker compose a clean digest to send from their own email client. Brokers can tag articles to client accounts for follow-up.
 
 ## Core Features (MVP)
 - Location and keyword-based news filter setup (city, neighborhood, topics)
-- Daily digest email with top 5-10 relevant articles
+- Digest builder with top 5-10 relevant articles, copyable or sendable via the broker's email client
 - In-app news feed with article preview and source attribution
 - Article tagging and saving for client follow-up
-- Custom alert for breaking news matching high-priority keywords
+- Breaking-news banner and browser notification for articles matching high-priority keywords
 
 ## API Used
 - NewsAPI — provides access to real-time news articles from thousands of sources, filterable by keyword, language, and date
@@ -29,5 +29,5 @@ Subscription — $39/month per user for daily digests across up to 3 locations; 
 Next.js + Supabase + Resend
 
 ## MVP Scope
-Included in v1: keyword/location filter, daily digest email, in-app feed, article saving.
+Included in v1: keyword/location filter, digest builder (email client draft), in-app feed, article saving.
 Out of scope: CRM integration, automated client email forwarding, sentiment analysis, social media monitoring.

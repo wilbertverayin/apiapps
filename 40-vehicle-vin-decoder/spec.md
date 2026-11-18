@@ -16,8 +16,8 @@ A web app where dealers input a VIN and instantly receive a complete vehicle spe
 - VIN input with format validation (17-character check)
 - Complete vehicle decode: year, make, model, trim, engine, transmission, drivetrain, fuel type, body style
 - NHTSA recall status check for the decoded vehicle
-- Printable one-page vehicle data sheet (PDF export)
-- VIN lookup history log per dealer account
+- Printable one-page vehicle data sheet (browser print dialog, save as PDF)
+- VIN lookup history log (stored in the browser)
 
 ## API Used
 - NHTSA Vehicle API — free US government API providing VIN decoding with full vehicle specification data, recall lookups, and manufacturer information for all vehicles sold in the US market
@@ -29,4 +29,4 @@ Freemium — 50 VIN lookups/month free; Dealer Plan at $39/month for unlimited l
 Next.js + Supabase + Puppeteer (PDF generation)
 
 ## MVP Scope
-In scope: VIN decode, recall check, spec display, printable PDF report, lookup history, user accounts. Out of scope: vehicle history report (Carfax/AutoCheck integration), market value lookup, direct DMS/inventory system sync in v1.
+In scope: VIN decode, recall check, spec display, printable report via browser print, lookup history. Out of scope: vehicle history report (Carfax/AutoCheck integration), market value lookup, direct DMS/inventory system sync in v1.
