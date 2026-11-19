@@ -20,7 +20,7 @@ A UV safety management tool where managers set up job sites by location and rece
 - Alert log per site for compliance records, exportable as CSV
 
 ## API Used
-- OpenWeatherMap UV API — provides current UV index and UV forecast data by geographic coordinates
+- Open-Meteo Forecast API: provides current UV index and UV forecast data by geographic coordinates, with Open-Meteo geocoding
 
 ## Monetization
 SaaS subscription — $29/month for up to 3 job sites; $69/month for unlimited sites and SMS alerting.

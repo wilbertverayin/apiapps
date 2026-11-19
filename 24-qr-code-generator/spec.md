@@ -19,7 +19,7 @@ A web app that lets businesses generate branded, customizable QR codes for URLs,
 - Saved-codes library (stored in the browser) with save date
 
 ## API Used
-- QR Code API (qrcode-monkey or goqr.me) — generates QR code images with customization parameters including color, size, and logo embedding
+- None: QR codes are generated in the browser with the qrcode.js library
 
 ## Monetization
 Freemium — 3 static QR codes free forever; Pro at $15/month for unlimited dynamic codes, logo customization, and analytics.

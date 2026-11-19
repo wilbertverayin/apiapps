@@ -20,7 +20,7 @@ A monitoring tool that tracks real-time departure and arrival delay data across 
 - Simple dashboard showing current delay status across all watched airports
 
 ## API Used
-- Aviation Stack API — provides real-time flight status, departure/arrival delay data, and airport information for commercial flights worldwide
+- FAA Airport Status API (soa.smext.faa.gov): provides airport delay and ground-stop status for US airports
 
 ## Monetization
 SaaS subscription — $79/month per team (up to 10 watched airports and 5 users); $149/month for unlimited airports and users.

@@ -20,7 +20,7 @@ Users configure their regular transit routes, and the app monitors real-time del
 - Pause alerts toggle and weekdays-only setting
 
 ## API Used
-- Transitland API — provides real-time GTFS-RT feed data including vehicle positions, trip updates, and service alerts for transit agencies worldwide
+- TfL Unified API (London Tube line status) and MTA service status feed (via the allorigins.win CORS proxy): provides live transit status and delay data
 
 ## Monetization
 Freemium — free for 1 route and email alerts; Pro at $5/month for 5 routes and SMS alerts.

@@ -20,7 +20,7 @@ A distraction-free web app (and browser extension in a later version) where cont
 - Personal word list to save lookups for vocabulary building
 
 ## API Used
-- Merriam-Webster Dictionary API — provides authoritative definitions, pronunciation audio, part-of-speech classifications, example sentences, and etymologies for the full English lexicon
+- Free Dictionary API (dictionaryapi.dev): provides definitions, pronunciation audio, part-of-speech classification, and examples
 
 ## Monetization
 Freemium — 50 lookups/day free; Pro at $7/month for unlimited lookups, saved word list, and daily vocabulary digest email.

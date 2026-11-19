@@ -20,7 +20,7 @@ Users enter their recipe ingredients and quantities, and the app fetches nutriti
 - Save and manage multiple product recipes
 
 ## API Used
-- USDA FoodData Central API — provides detailed nutritional composition data for thousands of food ingredients
+- Open Food Facts API: provides nutrition data for packaged food products by search term
 
 ## Monetization
 Usage-based — free for 3 saved recipes; Pro at $25/month for unlimited recipes, PDF exports, and label customization (logo, brand colors).

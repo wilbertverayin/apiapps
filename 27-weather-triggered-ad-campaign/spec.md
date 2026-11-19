@@ -20,7 +20,7 @@ A tool that lets businesses define weather rules (e.g., "activate rain gear camp
 - Rule history log showing trigger events and campaign actions taken
 
 ## API Used
-- OpenWeatherMap API — provides current conditions (temperature, precipitation, wind, humidity) and hourly forecasts for any city worldwide
+- Open-Meteo Forecast API: provides current conditions (temperature, precipitation, wind, humidity) and hourly forecasts by coordinates, with Nominatim geocoding
 
 ## Monetization
 Subscription — Starter at $29/month for 3 rules and 1 ad account; Pro at $79/month for unlimited rules and 3 ad accounts.

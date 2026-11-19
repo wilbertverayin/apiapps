@@ -20,7 +20,7 @@ The app detects the language of pasted support messages in the browser using the
 - Zendesk webhook that posts detection results from the page
 
 ## API Used
-- DetectLanguage API — detects the language of any text input with confidence scoring, supporting 164 languages
+- None: language detection runs in the browser with the franc library
 
 ## Monetization
 Flat subscription — $29/month for up to 1,000 detections/month and Zendesk integration; $79/month for 10,000 detections and multi-helpdesk support.

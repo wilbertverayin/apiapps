@@ -20,7 +20,7 @@ Staff or customers enter a dish or key flavors, and the app returns curated pair
 - Guest-facing QR code mode for self-serve pairing at the table
 
 ## API Used
-- Open Food Facts API — provides food product ingredient and flavor profile data used to match against drink pairing logic
+- None: pairings are computed locally from built-in data; api.qrserver.com renders the shareable QR code
 
 ## Monetization
 Flat subscription — $39/month per venue for unlimited pairings, menu import, and QR code guest mode.

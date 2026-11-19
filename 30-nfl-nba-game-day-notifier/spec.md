@@ -20,7 +20,7 @@ A venue tool where the owner selects their featured teams and keeps a subscriber
 - Game schedule display for venue owner dashboard
 
 ## API Used
-- MySportsFeeds API — provides NFL and NBA schedules, team rosters, game status, and real-time score data for building sports-aware applications
+- TheSportsDB API: provides NFL and NBA schedules, team data, and badges
 
 ## Monetization
 Subscription — $39/month per venue for 1 sport and up to 500 subscribers; $79/month for both sports and unlimited subscribers.

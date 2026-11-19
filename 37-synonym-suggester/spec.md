@@ -20,7 +20,7 @@ A web app where users paste a sentence or paragraph, click a word, and receive s
 - Register filter (formal, informal, slang)
 
 ## API Used
-- Merriam-Webster Thesaurus API — provides synonym lists with sense groupings, antonyms, and related words with editorial context notes for natural language guidance
+- Datamuse API: provides synonyms, related words, and antonyms with frequency data
 
 ## Monetization
 Freemium — 30 synonym lookups/day free; Pro at $9/month for unlimited lookups, nuance explanations, formality mode, and text history.

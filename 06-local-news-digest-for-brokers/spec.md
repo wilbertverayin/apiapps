@@ -20,7 +20,7 @@ The app monitors selected local news sources via keyword and location filters, c
 - Breaking-news banner and browser notification for articles matching high-priority keywords
 
 ## API Used
-- NewsAPI — provides access to real-time news articles from thousands of sources, filterable by keyword, language, and date
+- Public RSS feeds (Real Estate News, Construction Dive, Hacker News) fetched through the allorigins.win and corsproxy.io CORS proxies
 
 ## Monetization
 Subscription — $39/month per user for daily digests across up to 3 locations; agency plan at $99/month for 5 users and 10 locations.

@@ -20,7 +20,7 @@ Users build a personal watchlist of stocks and configure alert rules with flexib
 - Watchlist summary opened as an email draft on demand
 
 ## API Used
-- Alpha Vantage API — provides real-time and historical stock quotes, technical indicators, and intraday time series data
+- Yahoo Finance chart API (via the allorigins.win CORS proxy): provides real-time and historical stock quotes
 
 ## Monetization
 Freemium — free for 5 tickers and email alerts only; Pro at $15/month for 20 tickers, SMS alerts, and daily digest.

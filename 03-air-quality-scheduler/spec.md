@@ -20,7 +20,7 @@ The app integrates real-time and 5-day air quality forecasts for any location, a
 - Exportable event schedule with AQI notes attached
 
 ## API Used
-- AirVisual API (IQAir) — provides real-time and forecast AQI data including PM2.5, PM10, and O3 by city and coordinates
+- OpenAQ API v3: provides real-time PM2.5, PM10, and O3 readings from nearby monitoring stations, with Open-Meteo Air Quality API as the forecast source
 
 ## Monetization
 Freemium — free for 1 location and 3 events; Pro at $15/month per organization for unlimited locations, events, and alerts.

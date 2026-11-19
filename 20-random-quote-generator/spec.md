@@ -20,7 +20,7 @@ The app fetches quotes filterable by author, lets users style a quote card (colo
 - One-click PNG download of the quote card
 
 ## API Used
-- Quotable API — provides a free, open-source REST API of curated quotes filterable by author, tag, and length
+- DummyJSON Quotes API: provides a free REST API of quotes with random and paginated fetch
 
 ## Monetization
 Freemium — free for up to 50 subscribers and basic branding; Pro at $15/month for unlimited subscribers, full brand customization, and social image exports.
