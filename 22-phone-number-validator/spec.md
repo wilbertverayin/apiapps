@@ -17,7 +17,7 @@ A web app where users upload a CSV of phone numbers and receive a validated, enr
 - Bulk validation via NumVerify API (valid/invalid, line type, carrier, country)
 - E.164 formatting output alongside original input
 - Downloadable results CSV with validation columns appended
-- Summary dashboard showing valid/invalid/mobile/landline breakdown
+- Summary showing total/valid/invalid counts, with line type per row
 
 ## API Used
 - NumVerify API — provides phone number validation, carrier lookup, line type detection, and E.164 formatting for numbers worldwide
@@ -29,4 +29,4 @@ Pay-per-use — $0.005 per validated number; monthly subscription at $49/month f
 Next.js + Supabase + Stripe
 
 ## MVP Scope
-In scope: CSV upload, batch validation, enriched CSV export, summary stats, Stripe billing. Out of scope: CRM integrations (Salesforce/HubSpot sync), real-time API endpoint for developers, single number lookup widget in v1.
+In scope: CSV upload, batch validation, enriched CSV export, summary stats, pricing modal linking to Stripe payment links (placeholder URLs). Out of scope: CRM integrations (Salesforce/HubSpot sync), real-time API endpoint for developers, single number lookup widget in v1.

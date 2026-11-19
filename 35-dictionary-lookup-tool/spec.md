@@ -15,12 +15,12 @@ A distraction-free web app (and browser extension in a later version) where cont
 ## Core Features (MVP)
 - Instant word lookup with definitions grouped by part of speech
 - Phonetic pronunciation with audio playback
-- Example sentences from Merriam-Webster's editorial corpus
+- Example sentences, where the dictionary data provides them
 - Etymology and word origin panel
 - Personal word list to save lookups for vocabulary building
 
 ## API Used
-- Merriam-Webster Dictionary API — provides authoritative definitions, pronunciation audio, part-of-speech classifications, example sentences, and etymologies for the full English lexicon
+- Free Dictionary API (dictionaryapi.dev): provides definitions, pronunciation audio, part-of-speech classification, and examples
 
 ## Monetization
 Freemium — 50 lookups/day free; Pro at $7/month for unlimited lookups, saved word list, and daily vocabulary digest email.

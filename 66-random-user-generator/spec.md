@@ -10,7 +10,7 @@ Product teams, UX designers, and QA engineers at SaaS companies and digital agen
 Teams waste time manually crafting fake user datasets for demos, staging environments, and QA test suites. Generic placeholder data makes presentations look unprofessional and fails to surface real-world edge cases like long names, international characters, or diverse profile photos. No single tool produces structured, exportable, realistic user sets at scale.
 
 ## Solution
-The app generates configurable batches of realistic user profiles via the RandomUser API — controlling nationality, gender ratio, age range, and count — and exports the result as JSON, CSV, or SQL INSERT statements ready to drop into any database or prototype.
+The app generates configurable batches of realistic user profiles via the RandomUser API, controlling nationality, gender, age range, and count, and exports the result as JSON, CSV, or SQL INSERT statements ready to drop into any database or prototype.
 
 ## Core Features (MVP)
 - Batch user generation with configurable parameters (count, nationality, gender, age range)

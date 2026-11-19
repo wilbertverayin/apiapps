@@ -10,13 +10,13 @@ Boutique technical recruiting firms and in-house talent acquisition teams at tec
 Tech recruiters struggle to distinguish active, skilled developers from those with impressive-looking but stale profiles. Manually revisiting GitHub profiles to check for new commits, star growth, or notable contributions is time-consuming and unsustainable at scale. Recruiters miss the right moment to reach out when a developer goes active after a quiet period.
 
 ## Solution
-A candidate monitoring tool that lets recruiters add GitHub usernames to watchlists and tracks repo activity, star counts, language breakdown, and contribution trends. Recruiters receive alerts when a watched developer pushes a notable project or surges in activity — the ideal engagement signal.
+A candidate monitoring tool that lets recruiters add GitHub usernames to watchlists and tracks repo activity, star counts, language breakdown, and contribution trends. Recruiters can run a Check Now alert scan to see when a watched developer pushes a notable project or surges in activity, the ideal engagement signal.
 
 ## Core Features (MVP)
 - Candidate watchlist — add GitHub usernames to track
 - Profile snapshot: top repos, languages, star counts, recent commit activity
 - Activity trend graph showing commit frequency over the last 90 days
-- Alert when a watched candidate creates a new public repo or exceeds configurable weekly commit threshold
+- Check Now alert when a watched candidate creates a new public repo or exceeds configurable weekly commit threshold
 - Notes field per candidate for recruiter context
 
 ## API Used

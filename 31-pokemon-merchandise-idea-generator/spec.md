@@ -15,9 +15,9 @@ A tool that lets sellers select or randomize a Pokemon, then generates a set of 
 ## Core Features (MVP)
 - Pokemon selector (search by name or random generator)
 - Fetch Pokemon data: type, abilities, moves, flavor text via PokéAPI
-- AI-generated merchandise concepts: 5 product ideas per Pokemon with titles and descriptions
+- Merchandise concepts per Pokemon with titles and descriptions: template-based by default, OpenAI-generated when the user supplies an API key
 - One-click copy of listing-ready text per concept
-- Saved ideas library per user account
+- Saved ideas library (stored in the browser)
 
 ## API Used
 - PokéAPI — provides comprehensive Pokemon data including types, abilities, moves, evolution chains, and Pokedex flavor text entries for all 1000+ Pokemon
@@ -29,4 +29,4 @@ Freemium — 10 free generations per month; Pro at $12/month for unlimited gener
 Next.js + Supabase + OpenAI API
 
 ## MVP Scope
-In scope: Pokemon lookup, AI concept generation, copy-to-clipboard, saved library, basic user accounts. Out of scope: direct POD platform publishing integration, image generation for designs, trademark/copyright advisory in v1.
+In scope: Pokemon lookup, template and optional OpenAI concept generation, copy-to-clipboard, saved library. Out of scope: direct POD platform publishing integration, image generation for designs, trademark/copyright advisory in v1.

@@ -10,14 +10,14 @@ Small e-commerce brands and boutique marketing agencies managing seasonal promot
 SMB marketers waste hours manually researching public holidays per country and mapping them to campaign windows. Missing a key local holiday means missed revenue and relevance. Maintaining a shared, up-to-date holiday calendar for each market is tedious and error-prone.
 
 ## Solution
-The app pulls verified public holiday data for any country and year, then generates a campaign calendar with suggested themes, copy angles, and send dates. Marketers can export the calendar to Google Calendar or CSV in one click.
+The app pulls verified public holiday data for any country and year, then generates a campaign calendar with suggested themes, copy angles, and send dates. Marketers can export the calendar as an .ics file (importable into Google Calendar) or CSV in one click.
 
 ## Core Features (MVP)
 - Select one or more countries and a target year to generate a holiday list
-- AI-assisted campaign theme suggestions per holiday
+- Template-based campaign theme suggestions per holiday
 - Drag-and-drop calendar view with campaign cards
 - Export to CSV and Google Calendar (.ics)
-- Shareable read-only calendar link for team collaboration
+- Shareable link that restores the selected countries and year
 
 ## API Used
 - Nager.Date Public Holidays API — provides public holiday dates and names for 100+ countries

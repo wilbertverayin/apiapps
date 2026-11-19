@@ -10,13 +10,13 @@ Small and mid-sized logistics companies, couriers, and freight brokers who need 
 Enterprise shippers increasingly demand carbon footprint data from logistics partners as part of procurement and ESG reporting, but small logistics firms have no affordable tool to calculate per-shipment emissions. Manual spreadsheet calculations are inconsistent, non-auditable, and can't scale across hundreds of daily shipments.
 
 ## Solution
-A web app where logistics operators enter shipment details (origin, destination, vehicle type, weight) and receive an instant carbon emissions estimate using the Carbon Interface API, with the ability to generate per-shipment certificates and monthly emissions reports exportable for client billing or regulatory submission.
+A web app where logistics operators enter shipment details (origin, destination, vehicle type, weight) and receive an instant carbon emissions estimate using the Carbon Interface API, with the ability to generate per-shipment certificates and an emissions summary by transport mode.
 
 ## Core Features (MVP)
 - Shipment form: origin/destination, transport mode (truck, air, sea, rail), cargo weight
 - Instant CO2e emissions estimate via Carbon Interface API
 - Per-shipment carbon certificate PDF
-- Monthly emissions summary report (total CO2e by mode and route)
+- Emissions summary (total CO2e by mode across saved estimates)
 - CSV bulk import for batch shipment calculation
 
 ## API Used
@@ -29,5 +29,5 @@ Credit-based — $0.10 per calculation; subscription at $49/month for 1,000 calc
 Next.js + Supabase + Carbon Interface API + Puppeteer (PDF certs) + Stripe + Vercel.
 
 ## MVP Scope
-Included in v1: shipment form, emissions calculation, per-shipment PDF certificate, monthly report, CSV bulk import.
+Included in v1: shipment form, emissions calculation, per-shipment PDF certificate, emissions summary, CSV bulk import.
 Out of scope: live GPS route tracking, carbon offset purchasing, Scope 3 supply chain mapping, ERP integrations.

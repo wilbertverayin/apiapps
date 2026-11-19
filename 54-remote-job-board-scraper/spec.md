@@ -10,14 +10,14 @@ Niche staffing agencies and independent recruiters placing candidates in special
 Generic remote job boards aggregate all industries together, making it nearly impossible for niche recruiters to efficiently surface relevant remote roles for their specific vertical. Candidates in specialized fields waste hours filtering irrelevant listings. Recruiters who focus on niche placement have no affordable tool that surfaces only the roles they care about.
 
 ## Solution
-A filtered remote job feed that pulls listings from Remotive's API, lets users configure industry and keyword filters, and delivers a clean curated digest of matching remote roles. Recruiters can maintain multiple niche feeds for different client specializations and share them as branded job boards.
+A filtered remote job feed that pulls listings from Remotive's API, lets users configure industry and keyword filters, and lets recruiters build a manual digest of selected roles. Recruiters can maintain multiple niche filter profiles for different client specializations and share them via a copyable board link.
 
 ## Core Features (MVP)
 - Remotive job feed with configurable category and keyword filters
 - Multiple saved filter profiles for different niche verticals
-- Daily or weekly email digest of new matching remote jobs per filter profile
-- Shareable branded job board page per filter profile (public URL)
-- Bookmark and flag jobs for candidate matching notes
+- Manual digest builder that generates HTML and can send it through your own Resend API key
+- Copyable board link that reloads the page with a filter profile
+- Watchlist jobs with recruiter notes
 
 ## API Used
 - Remotive API — provides structured remote job listings with category, tags, company info, and job description data refreshed regularly
@@ -29,5 +29,5 @@ SaaS subscription — $39/month for up to 3 filter profiles; $79/month for unlim
 Next.js + Supabase + Resend
 
 ## MVP Scope
-**Included in v1:** Remotive feed integration, keyword and category filters, saved filter profiles, daily/weekly digest email, shareable public job board page, bookmarking with notes.
+**Included in v1:** Remotive feed integration, keyword and category filters, saved filter profiles, manual digest builder with Resend send, shareable board link, watchlist with notes.
 **Out of scope:** Candidate database, ATS sync, resume parsing, direct job application tracking, scraping of non-API job boards.
